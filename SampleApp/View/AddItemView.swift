@@ -23,6 +23,7 @@ struct AddItemView: View {
             Form {
                 // MARK: - ITEM NAME
                 TextField("Item name", text: $name)
+        
                 
                 //MARK: - ITEM CATEGORY
                 Picker("Category", selection: $category){
@@ -31,12 +32,14 @@ struct AddItemView: View {
                     }
                 }//: ITEM CATEGORY
                 
-                //MARK: - ITEM DELIVERY
+                Spacer()
+                
+                //MARK: - DELIVERY TYPE
                 Picker("Delivery", selection: $deliveryType){
                     ForEach(deliveryTypes, id: \.self) {
                         Text($0)
                     }
-                }//: ITEM DELIVERY
+                }//: DELIVERY TYPE
                 .pickerStyle(SegmentedPickerStyle())
             } //: FORM
             
